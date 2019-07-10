@@ -25,7 +25,17 @@ App({
             //检验返回信息，确认无误后将个人信息加入全局变量clientInfoP
             if (res.data.status == 'none') {
               //确定注册
-
+              wx.showModal({
+                title: '用户未注册',
+                content: '确定注册?',
+                success(res){
+                  if(res.confirm){
+                    wx.navigateTo({
+                      url: '/pages/changeVipUserInfo/changeVipUserInfo',
+                    })
+                  }
+                }
+              })
               //提交注册信息
               
             }else{

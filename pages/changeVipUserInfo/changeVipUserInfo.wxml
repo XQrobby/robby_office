@@ -1,0 +1,11 @@
+<!--pages/changeVipUserInfo/changeVipUserInfo.wxml-->
+<view>姓名</view>
+<input></input>
+<view>电话</view>
+<input></input>
+<view>
+  <picker bindchange='choiceVipUserType' value='{{vipUserTypeIdx}}' range='{{vipUserTypes}}'>
+    <view>用户类型</view>
+    <view>{{vipUserType}}</view>
+  </picker>
+</view>
