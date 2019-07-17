@@ -21,25 +21,29 @@ App({
           header: { "Content-type": config_js.requestHeader },
           data: { code: res.code },
           success: function (res) {
-            console.log(res.data)
-            //检验返回信息，确认无误后将个人信息加入全局变量clientInfoP
+            console.log('连接成功', res.data)
+            app.globalData.unionCode = res.data.unionCode
+            //检验返回信息，确认无误后将个人信息加入全局变量userInfoP
             if (res.data.status == 'none') {
               //确定注册
+              app.globalData.vipUserTypes = res.data.vipUserTypes
               wx.showModal({
                 title: '用户未注册',
                 content: '确定注册?',
-                success(res){
-                  if(res.confirm){
+                success(res) {
+                  if (res.confirm) {
                     wx.navigateTo({
-                      url: '/pages/changeVipUserInfo/changeVipUserInfo',
+                      url: '/pages/enroll/enroll',
                     })
                   }
                 }
               })
               //提交注册信息
-              
-            }else{
-
+            } else {
+              app.globalData.userInfoP = res.data.userInfoP
+              if (app.userInfoPCallback){
+                app.userInfoPCallback(app.globalData.userInfoP)
+              }
             }
           },
           fail: function () {
@@ -56,7 +60,7 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.clientInfo = res.userInfo
+              this.globalData.userInfo = res.userInfo
 
               // 由于 getclientInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -70,6 +74,6 @@ App({
     })
   },
   globalData: {
-    vipUserInfo: null,
+    vipUserTypes: null,
   }
 })

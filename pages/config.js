@@ -3,6 +3,7 @@ var config = {
   requestHeader: "application/x-www-form-urlencoded",
   urlpatterns:{
     login:'office/login/',
+    enroll:'office/enroll/',
   },
 }
 

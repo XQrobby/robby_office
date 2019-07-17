@@ -1,0 +1,15 @@
+<!--pages/changeVipUserInfo/changeVipUserInfo.wxml-->
+<view id='name'>姓名</view>
+<input bindinput='inputName'></input>
+
+<view id='tel'>电话</view>
+<input bindinput='inputTel'></input>
+<view id='addr'>地址</view>
+<input bindinput='inputAddr'></input>
+<view>
+  <picker bindchange='choiceVipUserType' value='{{vipUserTypeIdx}}' range='{{vipUserTypes}}'>
+    <view>用户类型</view>
+    <view>{{vipUserType}}</view>
+  </picker>
+</view>
+<button id='submit' bindtap='submit'>提交注册信息</button>

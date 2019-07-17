@@ -1,12 +1,30 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/changeVipUserInfo/changeVipUserInfo"
+    "pages/enroll/enroll",
+    "pages/taskList/taskList"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#a3caff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/indexsel.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/taskList/taskList",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/list.png",
+        "text": "任务"
+      }
+    ]
   }
 }
