@@ -41,6 +41,7 @@ App({
               //提交注册信息
             } else {
               app.globalData.userInfoP = res.data.userInfoP
+              app.globalData.unionCode = res.data.unionCode
               if (app.userInfoPCallback){
                 app.userInfoPCallback(app.globalData.userInfoP)
               }

@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/enroll/enroll",
-    "pages/taskList/taskList"
+    "pages/taskList/taskList",
+    "pages/order/order"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,8 +22,8 @@
       },
       {
         "pagePath": "pages/taskList/taskList",
-        "iconPath": "images/index.png",
-        "selectedIconPath": "images/list.png",
+        "iconPath": "images/list.png",
+        "selectedIconPath": "images/listsel.png",
         "text": "任务"
       }
     ]

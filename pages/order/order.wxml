@@ -1,0 +1,80 @@
+<!--pages/order/order.wxml-->
+<view class='container'>
+  <view id='title-3'>订单详情</view>
+  <view id='user'>
+    <view class='content'>
+      <view id='row-0'>
+        <text class='name'>{{order.name}}</text>
+        <text class='tel'>{{order.tel}}</text>
+      </view>
+      <view id='row-1'>
+        <text class='address'>{{order.address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="separate"></view>
+  <view id='fault'>
+    <view class='title-1'>
+      <text class='text-0'>故障信息</text>
+    </view>
+    <view id='typ'>
+      <text class='text-1'>机器型号：</text>
+      <text class='text-2'>{{order.orderType}}</text>
+    </view>
+    <view id='cfa'>
+      <text class='text-1'>资产编号：</text>
+      <text class='text-2'>{{order.cfa}}</text>
+    </view>
+    <view id='faultDes'>
+      <text class='text-1'>故障描述：</text>
+      <text class='text-2'>{{order.faultDescription}}</text>
+    </view>
+  </view>
+  <view class="separate"></view>
+    <view id='fix'>
+    <view class='title-1'>
+      <text class='text-0'>维修信息</text>
+    </view>
+    <view id='faultCon'>
+      <text class='text-1'>故障内容：</text>
+      <text class='text-1'>{{order.faultContent}}</text>
+    </view>
+    <view id='repairGuy'>
+      <text class='text-1'>维修技术员：</text>
+      <text class='text-2'>{{order.technician}}</text>
+    </view>
+    <view id='costList'>
+      <text class='text-1'>费用明细：</text>
+      <text class='text-2'>{{order.costList}}</text>
+    </view>
+  </view>
+  <view class="separate"></view>
+  <view id='order'>
+    <view class='title-1'>
+      <text class='text-0'>订单信息</text>
+    </view>
+    <view id='No'>
+      <text class='text-1'>订单编号：</text>
+      <text class='text-2'>{{order.orderID}}</text>
+    </view>
+    <view id='rpTime'>
+      <text class='text-1'>报修时间：</text>
+      <text class='text-2'>{{order.createTime}}</text>
+    </view>
+    <view id='receiveTime'>
+      <text class='text-1'>接单时间：</text>
+      <text class='text-2'>{{order.receiveTime}}</text>
+    </view>
+    <view id='completeTime'>
+      <text class='text-1'>完修时间：</text>
+      <text class='text-2'>{{order.completeTime}}</text>
+    </view>
+    <view id='checkTime'>
+      <text class='text-1'>验收时间：</text>
+      <text class='text-2'>{{order.checkTime}}</text>
+    </view>
+  </view>
+
+</view>
+
+

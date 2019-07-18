@@ -4,6 +4,8 @@ var config = {
   urlpatterns:{
     login:'office/login/',
     enroll:'office/enroll/',
+    taskList:'office/taskList/',
+    order:'office/order/'
   },
 }
 
