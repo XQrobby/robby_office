@@ -3,13 +3,12 @@
   <view id='title-3'>订单详情</view>
   <view id='user'>
     <view class='content'>
-      <view id='row-0'>
-        <text class='name'>{{order.name}}</text>
-        <text class='tel'>{{order.tel}}</text>
-      </view>
-      <view id='row-1'>
-        <text class='address'>{{order.address}}</text>
-      </view>
+      <view class='name'>{{order.client}}</view>
+      <view class='address'>{{order.addr}}</view>
+      <view>{{order.orderID}}</view>
+      <view>{{order.orderStatus}}</view>
+      <view>{{order.serviceStatus}}</view>
+      <view class='view-2'>{{order.orderType}}</view>
     </view>
   </view>
   <view class="separate"></view>
@@ -19,7 +18,7 @@
     </view>
     <view id='typ'>
       <text class='text-1'>机器型号：</text>
-      <text class='text-2'>{{order.orderType}}</text>
+      <text class='text-2'>{{order.model}}</text>
     </view>
     <view id='cfa'>
       <text class='text-1'>资产编号：</text>
@@ -74,7 +73,9 @@
       <text class='text-2'>{{order.checkTime}}</text>
     </view>
   </view>
-
+  <view>
+    <button bindtap='repair'>{{repairButton}}</button>
+  </view>
 </view>
 
 

@@ -5,7 +5,9 @@ var config = {
     login:'office/login/',
     enroll:'office/enroll/',
     taskList:'office/taskList/',
-    order:'office/order/'
+    order:'office/order/',
+    repair:'office/repair/',
+    repairEnd: 'office/repairEnd/'
   },
 }
 
