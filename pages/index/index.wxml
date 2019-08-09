@@ -1,8 +1,29 @@
 <!--index.wxml-->
 <view class="container">
-  <view id='name'>{{userInfoP.name}}</view>
-  <view id='address'>{{userInfoP.address}}</view>
-  <view id='agent'>{{userInfoP.agent}}</view>
-  <view id='jobNumber'>{{userInfoP.jobNumber}}</view>
-  <view id='level'>{{userInfoP.level}}</view>
+  <view class="userinfo" bindtap='changeUser'>
+    <image class="userinfo-avatar" src="{{user.avater}}/images/user.png" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfoP.name}}AAAA</text>
+  </view>
+  <view class="person-list">
+    <view class="person-line"></view>
+    <view class="list-item">
+      <text class="item-text">所属企业</text>
+      <text class="item-text">{{userInfoP.agent}}</text>
+    </view>
+    <view class="person-line"></view>
+    <view class="list-item">
+      <text class="item-text">用户工号</text>
+      <text class="item-text">{{userInfoP.jobNumber}}</text>
+    </view>
+    <view class="person-line"></view>
+    <view class="list-item">
+      <text class="item-text">权限等级</text>
+      <text class="item-text">{{userInfoP.level}}</text>
+    </view>
+    <view class="person-line"></view>
+    <view class="list-item">
+      <text class="item-text">联系地址</text>
+      <text class="item-text">{{userInfoP.address}}</text>
+    </view>
+  </view>
 </view>
