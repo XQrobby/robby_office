@@ -3,7 +3,8 @@
 const app = getApp()
 Page({
   data: {
-    bindDisabled: false
+    bindDisabled: false,
+
   },
   onLoad: function () {
     var that = this;
@@ -28,5 +29,10 @@ Page({
   },
   onShow:function(){
     console.log('onshow')
+  },
+  changeUser: function () {
+    wx.navigateTo({
+      url: '../enroll/enroll',
+    })
   }
 })

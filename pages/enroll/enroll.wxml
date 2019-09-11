@@ -1,15 +1,39 @@
 <!--pages/changeVipUserInfo/changeVipUserInfo.wxml-->
-<view id='name'>姓名</view>
-<input bindinput='inputName'></input>
+<view class='container'>
+  <form bindsubmit='formSubmit'>
+    <view class='title'>个人资料</view>
+    <view class='space'>联系人</view>
 
-<view id='tel'>电话</view>
-<input bindinput='inputTel'></input>
-<view id='addr'>地址</view>
-<input bindinput='inputAddr'></input>
-<view>
-  <picker bindchange='choiceVipUserType' value='{{vipUserTypeIdx}}' range='{{vipUserTypes}}'>
-    <view>用户类型</view>
-    <view>{{vipUserType}}</view>
-  </picker>
+    <view id='userinfo'>
+
+      <view class='section'>
+        <view class='section_title'>姓名</view>
+        <input id='name' placeholder='{{name}}' bindinput='inputName'></input>
+      </view>
+
+    <view class='line'></view>
+      <view class='section'>
+        <view class='section_title'>电话</view>
+        <input id='tel' placeholder='{{tel}}' bindinput='inputTel'></input>
+      </view>
+    
+    <view class='line'></view>
+      <view class='section'>
+        <view class='section_title'>地址</view>
+        <input id='clas' placeholder='{{Addr}}' bindinput='inputAddr'></input>
+      </view>
+
+      <view class='line'></view>
+      <picker bindchange='choiceVipUserType' value='{{vipUserTypeIdx}}' range='{{vipUserTypes}}'>
+        <view class='section'>
+          <view class='section_title'>用户类型</view>
+          <view>{{vipUserType}}</view>
+        </view>
+     </picker>
+
+  </view>
+
+    <button id='submit' bindtap='submit'>提交注册信息</button>
+  </form>
 </view>
-<button id='submit' bindtap='submit'>提交注册信息</button>
+
