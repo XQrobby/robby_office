@@ -14,10 +14,29 @@ Page({
    */
   onLoad: function (options) {
     const app = getApp();
-    this.setData({
-      'vipUserTypes': app.globalData.vipUserTypes,
-      'unionCode':app.globalData.userInfoP.unionCode,
-    })
+    console.log(app.globalData)
+    if(app.globalData.enroll){
+      this.setData({
+        'enroll': app.globalData.enroll,
+        'vipUserTypes': app.globalData.vipUserTypes,
+        'unionCode': app.globalData.unionCode,
+        'name': app.globalData.userInfoP.name,
+        'tel': app.globalData.userInfoP.tel,
+        'addr': app.globalData.userInfoP.address,
+        'vipUserType':app.globalData.userInfoP.typ
+      })
+    }else{
+      this.setData({
+        'enroll': app.globalData.enroll,
+        'vipUserTypes': app.globalData.vipUserTypes,
+        'unionCode': app.globalData.unionCode,
+        'userInfoP': app.globalData.userInfoP,
+        'name': '',
+        'tel': '',
+        'addr': '',
+        'vipUserType':''
+      })
+    }
   },
 
   /**
@@ -52,7 +71,7 @@ Page({
       that.toast('电话');
       return 0;
     } else if (!that.data.addr) {
-      that.toast('电话');
+      that.toast('地址');
       return 0;
     } else if (!that.data.vipUserType) {
       that.toast('用户类别');

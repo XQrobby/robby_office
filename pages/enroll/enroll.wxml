@@ -20,17 +20,24 @@
     <view class='line'></view>
       <view class='section'>
         <view class='section_title'>地址</view>
-        <input id='clas' placeholder='{{Addr}}' bindinput='inputAddr'></input>
+        <input id='clas' placeholder='{{addr}}' bindinput='inputAddr'></input>
       </view>
 
       <view class='line'></view>
-      <picker bindchange='choiceVipUserType' value='{{vipUserTypeIdx}}' range='{{vipUserTypes}}'>
+      <view wx:if='{{ enroll }}'>
         <view class='section'>
           <view class='section_title'>用户类型</view>
           <view>{{vipUserType}}</view>
         </view>
-     </picker>
-
+      </view>
+      <view wx:else>
+        <picker bindchange='choiceVipUserType' value='{{vipUserTypeIdx}}' range='{{vipUserTypes}}'>
+          <view class='section'>
+            <view class='section_title'>用户类型</view>
+            <view>{{vipUserType}}</view>
+          </view>
+        </picker>
+      </view>
   </view>
 
     <button id='submit' bindtap='submit'>提交注册信息</button>

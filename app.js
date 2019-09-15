@@ -12,7 +12,6 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        //console.log(res.code)
         const app = getApp();
         app.globalData.code = res.code;
         wx.request({
@@ -24,7 +23,9 @@ App({
             console.log('连接成功', res.data)
             app.globalData.unionCode = res.data.unionCode
             //检验返回信息，确认无误后将个人信息加入全局变量userInfoP
+            app.globalData.enroll = false
             if (res.data.status == 'none') {
+              app.globalData.enroll = false
               //确定注册
               app.globalData.vipUserTypes = res.data.vipUserTypes
               wx.showModal({
@@ -40,6 +41,7 @@ App({
               })
               //提交注册信息
             } else {
+              app.globalData.enroll = true
               app.globalData.userInfoP = res.data.userInfoP
               app.globalData.unionCode = res.data.unionCode
               if (app.userInfoPCallback){
@@ -56,17 +58,19 @@ App({
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        const app = getApp()
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getclientInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
               // 由于 getclientInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
+              }
+              this.globalData.userInfo = res.userInfo
+              if (app.userInfoCallbackA){
+                app.userInfoCallbackA(res.userInfo)
               }
             }
           })

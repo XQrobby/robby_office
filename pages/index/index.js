@@ -23,6 +23,23 @@ Page({
             bindDisabled: true,
             userInfoP: app.globalData.userInfoP
           })
+          console.log('success')
+        }
+      }
+    }
+    if(app.globalData.userInfo){
+      console.log('success')
+      this.setData({
+        userInfo: app.globalData.userInfo
+      })
+    }else{
+      console.log('false')
+      app.userInfoCallbackA = userInfo => {
+        if (userInfo) {
+          that.setData({
+            userInfo: app.globalData.userInfo
+          })
+          console.log('success', userInfo)
         }
       }
     }

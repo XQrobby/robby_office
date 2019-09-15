@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo" bindtap='changeUser'>
-    <image class="userinfo-avatar" src="{{user.avater}}/images/user.png" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfoP.name}}AAAA</text>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfoP.name}}</text>
   </view>
   <view class="person-list">
     <view class="person-line"></view>

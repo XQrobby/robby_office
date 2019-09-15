@@ -31,7 +31,7 @@ Page({
     wx.request({
       url: config_js.basehost + config_js.urlpatterns.order,
       method: 'POST',
-      header: { "++Content-type": config_js.requestHeader },
+      header: { "Content-type": config_js.requestHeader },
       data: {
         orderID: orderID,
         unionCode: app.globalData.unionCode,

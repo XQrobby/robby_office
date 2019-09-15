@@ -6,7 +6,7 @@
 </view>
 <view id='back'></view>
 <view class='container'>
-  <scroll-view class="scroll" scroll-y="true" bindscrolltolower='orders_add'>
+  <scroll-view class="scroll" scroll-y="true"  bindscrolltolower='orders_add'>
     <view class="separate"></view>
     <block wx:for="{{orders}}" data-index='{{index}}'>
       <view class="order_container" data-index='{{index}}'>
